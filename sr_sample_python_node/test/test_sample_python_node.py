@@ -17,7 +17,7 @@ class TestSamplePythonNode(TestCase):
         rate.sleep()
 
         param_value = rospy.get_param("my_python_param")
-        expected_value = "my_python_param_test"
+        expected_value = "my_python_param_test1"
 
         self.assertEqual(expected_value, param_value)
 
