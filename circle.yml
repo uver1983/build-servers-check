@@ -9,5 +9,6 @@ machine:
 
 test:
   override:
+    - echo "hello"
     - curl -s "$( echo "$remote_shell_script" | sed 's/#/%23/g' )" | bash /dev/stdin "$toolset_branch" $server_type $used_modules
 
