@@ -6,9 +6,12 @@ machine:
     server_type: circle
     used_modules: check_cache,codecov_tool
     remote_shell_script: 'https://raw.githubusercontent.com/shadow-robot/sr-build-tools/$toolset_branch/bin/sr-run-ci-build.sh'
+#    CIRCLE_REPO_DIR: $HOME/$CIRCLE_PROJECT_REPONAME
+
 
 test:
   override:
-    - echo "hello"
-    - curl -s "$( echo "$remote_shell_script" | sed 's/#/%23/g' )" | bash /dev/stdin "$toolset_branch" $server_type $used_modules
+    - sudo docker pull "shadowrobot/ubuntu-ros-indigo-build-tools"
+    - sudo docker run "shadowrobot/ubuntu-ros-indigo-build-tools" ls
+#    - curl -s "$( echo "$remote_shell_script" | sed 's/#/%23/g' )" | bash /dev/stdin "$toolset_branch" $server_type $used_modules
 
