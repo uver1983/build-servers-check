@@ -3,6 +3,7 @@ project(sr_sample_cpp_node)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp
+  sr_ur_msgs
 )
 
 find_package(sr_sample_cpp_library REQUIRED)
@@ -12,7 +13,7 @@ find_package(sr_sample_cpp_library REQUIRED)
 ###################################
 
 catkin_package(
-  CATKIN_DEPENDS sr_sample_cpp_library
+  CATKIN_DEPENDS sr_sample_cpp_library sr_ur_msgs
 )
 
 ###########
