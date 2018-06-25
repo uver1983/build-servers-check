@@ -12,7 +12,7 @@ CODEBUILD_BUILD_ARN=$4
 
 BUILD_ID=`echo $CODEBUILD_BUILD_ARN | cut -d"/" -f2- | cut -d":" -f2`
 PL_NUMBER=`echo $CODEBUILD_SOURCE_VERSION | cut -c 4-`
-S3_LINK='https://s3.amazonaws.com/test7777khkn/$BUILD_ID/artifacts.zip'
+S3_LINK='https://s3.amazonaws.com/com.shadowrobot.eu-open/$BUILD_ID/artifacts.zip'
 
 
 if [ "$CODEBUILD_BUILD_SUCCEEDING" -eq 0 ]; then 
