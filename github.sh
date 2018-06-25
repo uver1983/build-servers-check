@@ -16,7 +16,7 @@ S3_LINK='https://s3.amazonaws.com/com.shadowrobot.eu-open/$BUILD_ID/artifacts.zi
 
 
 if [ "$CODEBUILD_BUILD_SUCCEEDING" -eq 0 ]; then 
- curl -X POST "https://api.github.com/repos/felvis/build-servers-check/pulls/$PL_NUMBER/reviews" -H "authorization: Bearer $TOKEN" -H "content-type: application/json" -d '{"body":"Need to be fixed", "event":"REQUEST_CHANGES"}'; 
+ curl -X POST "https://api.github.com/repos/felvis/build-servers-check/pulls/$PL_NUMBER/reviews" -H "authorization: Bearer $TOKEN" -H "content-type: application/json" -d '{"body":"Need to be fixed"}'; 
  else
- curl -X POST "https://api.github.com/repos/felvis/build-servers-check/pulls/$PL_NUMBER/reviews" -H "authorization: Bearer $TOKEN" -H "content-type: application/json" -d '{"body":"APPROVED. Link to artifacts - https://s3.amazonaws.com/test7777khkn/'$BUILD_ID'/artifacts.zip", "event":"APPROVE"}'; 
+ curl -X POST "https://api.github.com/repos/felvis/build-servers-check/pulls/$PL_NUMBER/reviews" -H "authorization: Bearer $TOKEN" -H "content-type: application/json" -d '{"body":"APPROVED. Link to artifacts - https://s3.amazonaws.com/test7777khkn/'$BUILD_ID'/artifacts.zip"}'; 
  fi
